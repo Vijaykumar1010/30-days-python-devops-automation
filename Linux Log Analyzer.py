@@ -48,6 +48,9 @@ def read_logs(file_path):
     except FileNotFoundError:
         print("ERROR: Log file not found!")
         return []
+    
+    # function 2 count the error
+
 def count_log_levels(logs):
         counts = {
             "INFO": 0,
@@ -60,6 +63,26 @@ def count_log_levels(logs):
                 if f" { level} " in line:
                     counts[level] +=1
         return counts
+# funtion 3 Find the error message
+
+def find_errors(logs): #Defines a function accepting log entries
+
+# Creates an empty list
+    errors = [] 
+
+#Reads each log entry one by one
+    for line in logs:
+
+#Checks whether the entry contains ERROR
+        if "ERROR" in line:
+
+#Stores matching entries
+            errors.append(line.strip())
+
+       # strip() Removes newline characters
+
+       #Returns the collected errors     
+    return errors
 
 # Main program
 if __name__ == "__main__":
@@ -73,3 +96,11 @@ if __name__ == "__main__":
     result = count_log_levels(logs)
 
     print("Log Summary:", result)
+
+    # Function 3: Find errors
+    errors = find_errors(logs)
+
+    print("\nError message:")
+
+    for error in errors:
+        print(error)
