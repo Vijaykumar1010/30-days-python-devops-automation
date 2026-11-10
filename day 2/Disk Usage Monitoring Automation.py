@@ -19,6 +19,29 @@ def check_disk_usage():
     free = disk.free # free disk space in bytes
 
     print("Total:", total)
+    print("Used:", used)
+    print("Free:", free)
+
+    # Convert bytes into GB
+    total_gb = total / (1024 ** 3)
+    used_gb = used / (1024 ** 3)
+    free_gb = free / (1024 ** 3)
+
+    print(f"Total Space: {total_gb:.2f} GB")
+    print(f"Used Space: {used_gb:.2f} GB")
+    print(f"Free Space: {free_gb:.2f} GB")
+
+    # Calculate disk usage percentage
+    usage_percent = (used / total) * 100
+
+    print(f"Disk Usage: {usage_percent:.2f}%")
+
+    # Add alerting logic
+    if usage_percent >= 80:
+         print("WARNING: Disk usage is high!")
+
+    else:
+        print("OK: Disk usage is healthy.")
 
 
 # function call
