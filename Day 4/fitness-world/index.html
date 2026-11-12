@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fitness World demo login application">
+  <title>Fitness World | Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="login-card" id="loginView">
+      <div class="brand-mark">FW</div>
+      <p class="eyebrow">YOUR FITNESS JOURNEY STARTS HERE</p>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to continue to Fitness World.</p>
+
+      <form id="loginForm">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+
+        <p class="error-message" id="errorMessage" role="alert" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Login <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="demo-note">
+        <strong>Demo credentials</strong>
+        <span>Email: fitness@example.com</span>
+        <span>Password: Fit@123</span>
+      </div>
+      <p class="footer-note">Built as a beginner HTML, CSS, JavaScript and Docker project.</p>
+    </section>
+
+    <section class="dashboard-card hidden" id="dashboardView" aria-live="polite">
+      <div class="brand-mark">FW</div>
+      <p class="eyebrow">FITNESS WORLD</p>
+      <h1>Welcome to Fitness World! 🎉</h1>
+      <p class="muted">You're logged in to your demo fitness dashboard.</p>
+      <div class="stats">
+        <article><span>01</span><strong>Stay consistent</strong><small>Build a healthy routine</small></article>
+        <article><span>02</span><strong>Keep moving</strong><small>Progress one day at a time</small></article>
+        <article><span>03</span><strong>Reach your goal</strong><small>Celebrate every milestone</small></article>
+      </div>
+      <button class="primary-button" id="logoutButton" type="button">Logout</button>
+    </section>
+  </main>
+</body>
+</html>
